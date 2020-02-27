@@ -11,15 +11,11 @@ module "appsync_athena_async_resolver" {
   l3_object_key   = "quinovas/appsync-athena-async-resolver/appsync-athena-async-resolver-0.1.0.zip"
   memory_size     = var.memory_size
   name            = "${var.name_prefix}-appsync-athena-async-resolver"
-
-  policy_arns = [
-    "arn:aws:iam::aws:policy/AmazonAthenaFullAccess",
-  ]
-
-  runtime = "python3.7"
-  source  = "QuiNovas/lambdalambdalambda/aws"
-  timeout = var.timeout
-  version = "3.0.1"
+  policy_arns     = local.policy_arns
+  runtime         = "python3.7"
+  source          = "QuiNovas/lambdalambdalambda/aws"
+  timeout         = var.timeout
+  version         = "3.0.1"
 }
 
 module "appsync_async_lambda_datasource" {
