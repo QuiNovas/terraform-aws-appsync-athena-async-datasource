@@ -18,6 +18,12 @@ module "appsync_athena_async_resolver" {
   version         = "3.0.1"
 }
 
+resource "aws_iam_policy" "non_default_staging_dir_access" {
+  count  = var.athena_s3_staging_arn == "" ? 0 : 1
+  name   = "${var.name_prefix}appsync-athena-async-resolver-staging-s3-access"
+  policy = data.aws_iam_policy_document.non_default_staging_dir_access.json
+}
+
 module "appsync_async_lambda_datasource" {
   api_id                   = var.api_id
   invoke_lambda_policy_arn = module.appsync_athena_async_resolver.invoke_policy_arn
