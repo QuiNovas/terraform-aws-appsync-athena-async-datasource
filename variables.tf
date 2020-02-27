@@ -3,6 +3,18 @@ variable "api_id" {
   type        = string
 }
 
+variable "athena_datasource_policy_arn" {
+  description = "The arn of the iam policy that needs to be attached to the resolver lambda. This policy must be having read permissions to underlying datasource, which can be s3/dynamo etc and also access to KMS key used to decrypt the datasource"
+  type        = string
+}
+
+variable "athena_s3_staging_arn" {
+  defualt     = ""
+  description = "Non default (other than arn:aws:s3:::aws-athena-query-results-*) S3 bucket arn that Athena will store the query results in"
+  type        = string
+}
+
+
 variable "database" {
   default     = "default"
   description = "The AWS Athena Database to query. May be overridden in the query request. Defaults to default"
