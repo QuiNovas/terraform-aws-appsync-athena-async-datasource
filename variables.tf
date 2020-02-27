@@ -14,6 +14,11 @@ variable "dead_letter_arn" {
   type        = string
 }
 
+variable "kms_key_arn" {
+  description = "The arn of the KMS key used to encrypt the environment variables"
+  type        = string
+}
+
 variable "limit" {
   default     = 100
   description = "The maximum number of results to return during the results request. May be overridden in the results request. Defaults to 100."
