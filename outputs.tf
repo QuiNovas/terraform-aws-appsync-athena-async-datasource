@@ -24,17 +24,17 @@ output "datasource_role_unique_id" {
 }
 
 output "lambda_arn" {
-  description = "The arn of athena resolver Lambda function"
+  description = "The arn of athena async resolver Lambda function"
   value       = module.appsync_athena_async_resolver.arn
 }
 
 output "lambda_invoke_arn" {
-  description = "The invocation arn of this athena resolver Lambda function"
+  description = "The invocation arn of this athena async resolver Lambda function"
   value       = module.appsync_athena_async_resolver.invoke_arn
 }
 
 output "lambda_invoke_policy_arn" {
-  description = "The arn of the invocation policy athena resolver Lambda function"
+  description = "The arn of the invocation policy athena async resolver Lambda function"
   value       = module.appsync_athena_async_resolver.invoke_policy_arn
 }
 
