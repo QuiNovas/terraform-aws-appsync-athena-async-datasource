@@ -9,7 +9,7 @@ variable "athena_datasource_policy_arn" {
 }
 
 variable "athena_s3_staging_arn" {
-  defualt     = ""
+  default     = ""
   description = "Non default (other than arn:aws:s3:::aws-athena-query-results-*) S3 bucket arn that Athena will store the query results in"
   type        = string
 }
