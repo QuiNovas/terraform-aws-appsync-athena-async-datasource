@@ -8,7 +8,7 @@ module "appsync_athena_async_resolver" {
   dead_letter_arn = var.dead_letter_arn
   handler         = "function.handler"
   kms_key_arn     = var.kms_key_arn
-  l3_object_key   = "quinovas/appsync-athena-async-resolver/appsync-athena-async-resolver-0.1.1.zip"
+  l3_object_key   = "quinovas/appsync-athena-async-resolver/appsync-athena-async-resolver-0.1.3.zip"
   memory_size     = var.memory_size
   name            = "${var.name_prefix}-appsync-athena-async-resolver"
   policy_arns     = local.policy_arns
